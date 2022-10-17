@@ -1,0 +1,293 @@
+input,
+textarea,
+button,
+select,
+a {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	color: #161616;
+	font-size: 1.5rem;
+	text-decoration: none;
+}
+
+body {
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Work Sans', sans-serif;
+	align-items: center;
+	color: #161616;
+	margin: 0px;
+
+
+}
+
+body button {
+    border-width: 2px;
+    border-color: #161616;
+	cursor: pointer;
+	font-size: 1.3rem;
+	color: #161616;
+	padding: 0px 30px;
+	height: 75px;
+    background-color: #ffffff;
+    margin-top: 20px;
+}
+
+h1, h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+	line-height: 3rem;
+}
+
+h5 {
+	font-weight: 200;
+	font-size: 1.5rem;
+}
+
+.top-bar {
+	min-width: 100%;
+	background-color: #ffffff;
+	padding: 6px;
+	position: fixed;
+	box-shadow: 0px 2px 4px #00000020;
+	z-index: 5;
+}
+
+.top-bar-items {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 15px;
+}
+
+.top-bar-items img{
+	max-height: 20px;
+}
+
+.top-bar-items button{
+	max-height: 20px;
+	max-width: 20px;
+	border-width: 0px;
+    border-color: #16161600;
+	cursor: pointer;
+	font-size: 0rem;
+	color: #16161600;
+	padding: 0px 0px;
+	height: 20px;
+    background-color: #ffffff00;
+    margin-top: 0px;
+}
+
+.top-bar-links{
+	text-align: center;
+	line-height: 3rem;
+}
+
+.top-bar-links p{
+	margin: 40px 0px 60px;
+}
+
+.hero-div {
+	margin-top: 40px;
+    margin: 0px;
+    padding: 0px;
+	height: 260px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position:center top;
+	background-attachment:fixed;
+	background-size: auto 260px;
+}
+
+.youtubeplayer {
+	position:relative;
+	width:92%;
+	height:90;
+	padding-bottom:56%;
+	margin: auto;
+}
+
+.youtubeplayer iframe{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	border-radius: 10px;
+
+}
+
+#videowide {
+	margin-top: 30px;
+	display: none;
+	right: 0;
+	bottom: 0;
+    width: 100%;
+	min-width: 660px;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+#videotall {
+	margin-top: 30px;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	max-width: 660px;
+	display: block;
+}
+
+#videodetail {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	max-width: 660px;
+	display: block;
+}
+
+.highligted-text {
+	font-size: 1rem;
+	line-height: 2.2rem;
+	margin: 0px;
+	font-weight: 700;
+}
+
+.thumbnail-container {
+	width: 100%;
+	max-width: 600px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.text-container {
+    width: 78%;
+	max-width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-top: 50px;
+}
+
+.text-container img{max-height: 48px;}
+
+.text-software {
+    width: 91%;
+	max-width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-top: 30px;
+	background-color: #eeeeee;
+	padding: 10px 35px;
+	box-sizing: border-box;
+}
+
+.img-container {
+    width: 100%;
+	max-width: 600px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.img-container img{
+	width: 100%;
+	max-width: 600px;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+
+}
+
+.project-thumbnail {
+	width: 50%;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+}
+
+.footer-window {
+	background-color: #161616;
+	width: 100%;
+	padding: 40px 0px;
+    font-weight: 200;
+	font-size: 1.8rem;
+    height:329px;
+    
+}
+
+.footer {
+	background-color: #161616;
+	width: 100%;
+	padding: 40px 0px;
+    font-weight: 200;
+	font-size: 1.8rem;
+    height: 100%;
+    
+}
+
+.inner-footer {
+	width: 100%;
+	max-width: 600px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+    box-sizing: border-box;
+    padding: 20px 44px;
+}
+
+.inner-footer img {
+	max-height: 60px;
+	padding: 5px;
+	margin: 0px 5px;
+}
+
+.footer-copyright {
+    font-size: 1rem;
+    margin-top: 10px;
+	width: auto;
+    color: #ffffff;
+}
+
+@media only screen and (min-width: 660px) {
+
+	#videotall {display: none;}
+	#videowide {display: block;}
+	a :hover {opacity: 0.4;}
+	.top-bar a:hover{opacity: 0.4;}
+	.footer-content a:hover{opacity: 0.4;}
+	.text-software {
+		width: 91%;
+	}
+	.hero-div {
+		margin-top: 40px;
+		margin: 0px;
+		padding: 0px;
+		height: 400px;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-position:center top;
+		background-attachment:fixed;
+		background-size:unset;
+	}
+}
+
+
+@media only screen and (min-width: 1900px) {
+	.hero-div {
+		margin-top: 40px;
+		margin: 0px;
+		padding: 0px;
+		height: 400px;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position:top;
+		background-attachment:fixed;
+	}
+}
+
+.hide {
+    display: none;
+}
