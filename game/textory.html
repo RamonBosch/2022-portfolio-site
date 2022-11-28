@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--
+
+DESIGNED AND DEVELOPED
+BY RAMON BOSCH C 2022
+
+   |‾| |‾| |‾‾‾‾‾/
+           |    {
+   |_| |_| |_____\
+
+-->
+<html lang="en" color-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramon Bosch 🕹️ Game Design Portfolio</title>
+    <script>
+      if (localStorage.getItem("color-mode") === "dark" || (window.matchMedia("(prefers-color-scheme: dark)").matches && !localStorage.getItem("color-mode"))) {
+        document.documentElement.setAttribute("color-mode", "dark");
+      }
+    </script>
+    <meta name="description" content="Textory game design case study. Discover the process behind the design and development of this platformer mobile game.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon-portfolio.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <nav>
+      <a title="Go to home" alt="Home" href="index.html">
+        <img height="20px" title="Home" width="auto" src="/ramon-bosch-porfolio-main-icon.svg" alt="Main logo">
+      </a>
+      <div class="mode-toggler">
+        <button class="toggler-border light--hidden" alt="Toggle to light mode" title="Toggle light or dark mode">
+          <div class="toggler-switch"></div>
+        </button>
+        <button class="toggler-border dark--hidden" alt="Toggle to dark mode" title="Toggle light or dark mode">
+          <div class="toggler-switch"></div>
+        </button>
+      </div>
+    </nav>
+    <main>
+      <header class="header-project-page">
+        <h1>Textory</h1>
+      </header>
+      <section class="main-module">
+        <div>
+          <p class="little-title" style="margin-bottom: 0px;"> SUMMARY </p>
+          <p>Textory is my first attempt at game design, <b>a simple game aimed at mobile devices, developed in two months</b> with no previous experience in coding or 3D modeling. </p>
+          <img loading="lazy" alt="App icon" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-app-icon.webp">
+          <p>I wanted to work on <b>something simple and minimal to learn as much as possible</b>. Developing a third person, isometric maze game seemed feasible, and would work fine on a mobile device. </p>
+        </div>
+      </section>
+      <section class="main-module">
+        <h2>First ideas</h2>
+        <p>When thinking about ways of making a maze game, I considered <b>using a main character that could walk through walls</b>, so if the player got stuck, there may always be an alternative way out. </p>
+        <img loading="lazy" alt="Game concept sketches 1" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-sketches-game-concept-01.webp">
+        <p>This ability would <b>only be possible to use a certain number of times</b>, and may need to be charged to be available again. The maze would have enemies, the player would have to run from them and find healing items when low on HP. </p>
+        <img loading="lazy" alt="Game concept sketches 2" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-sketches-game-concept-02.webp">
+        <p>A final fun element I thought I might be able to implement would be <b>making the maze move or change</b>, to make it more varied, challenging, even replayable. </p>
+        <h2>Game breakdown</h2>
+        <p> In Textory the player controls Sendy, a text messenger that travels through the internet to deliver text messages from one device to another. </p>
+        <h3 style="color: var(--project-color-2);">Tutorial</h3>
+        <p>We begin the game inside a cellphone. Here Softie (the program's software) explains that Sendy has to <b>deliver a text to another device located on the other side of town</b>. The blue box walks us through the tutorial, so we can learn about Sendy's abilities. </p>
+        <img loading="lazy" alt="Tutorial sketches" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-sketches-tutorial.webp">
+        <h3 style="color: var(--project-color-2);">Battery and signal</h3>
+        <p>
+          <b>Sendy can send itself to any point visible within the limits of our mobile screen</b>, but only five times, then our signal is out.
+        </p>
+        <img loading="lazy" alt="Tutorial screenshot" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-screenshot-send.webp" style="max-width: 300px;">
+        <p>To charge the signal, <b>there are Wi-Fi hotspots that fill up our Wi-Fi bars</b>. We can also send our character back to the last visited Wi-Fi hotspot free of charge. </p>
+        <img loading="lazy" alt="Hotspot screenshot" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-screenshot-hotspot.webp" style="max-width: 300px;">
+        <p>
+          <b>Battery equals health points in Textory and is drained when we're hit by malware agents</b> such as Blocky or Bouncy. Ten hits and Sendy is knocked out, having to restart the level.
+        </p>
+        <img loading="lazy" alt="Foes screenshot" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-screenshot-foes.webp" style="max-width: 300px;">
+        <p>To advance through the levels we have to collect keys and cross big ramps quickly to finally arrive at our goal and deliver the text.</p>
+        <img loading="lazy" alt="Key screenshot" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-screenshot-key.webp" style="max-width: 300px;">
+        <h3 style="color: var(--project-color-2);">Visuals</h3>
+        <p>For Textory, I chose to <b>mimic late 80s videogame art aesthetics, like illustrations found in old game cartridges</b>. These old game illustrations ususally depict technology in a very fantastic way, humanizing digital elements or products in creative, even misleading ways. </p>
+        <img loading="lazy" alt="City illustration" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-illustration-city.webp" style="max-width: 500px;">
+        <p>This aesthetic felt <b>fitting with a game like Textory, in which sending a text message becomes an epic journey</b>. The logo is shaped like a speech bubble, and is also inspired by retro game logos such as Balloon Fighter, Dig Dug or Popeye. </p>
+        <img loading="lazy" alt="Game logo animation" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-logo.gif">
+        <p>The user interface is simple, <b>a joystick lets the player move Sendy and a button can be used to get back to the last hotspot visited</b>. Its elements use a color code that is consistent with the rest of the game: turquoise for wi-fi signal, green for battery, yellow for text messages and coral for ability buttons. </p>
+        <img loading="lazy" alt="user interface designs" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-ui.webp">
+        <p>
+          <b>The main menu apes a texting app</b>, as the player makes choices, new text bubbles appear at the bottom of the screen and go up until they overflow the screen.
+        </p>
+        <img loading="lazy" alt="Characters illustration" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-illustration-characters.webp" style="max-width: 500px;">
+        <h2>Sendy</h2>
+        <p>Sendy is the abstract <b>personification of a text message</b>. </p>
+        <img loading="lazy" alt="Sendy design sketches" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-sketches-sendy-design.webp" style="max-width: 500px;">
+        <h3 style="color: var(--project-color-2);">Design</h3>
+        <p>The final design is vaguely inspired by the original Sonic The Hedgehog. I wanted to convey a <b>sense of dynamism and speed while keeping the design as minimal as possible</b>. </p>
+        <img loading="lazy" alt="Early Sendy sketches" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-sketches-sendy.webp">
+        <p>The shape of Sendy's head is like the speech bubbles often used in text apps.</p>
+        <img loading="lazy" alt="Sendy 3D render" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-render-sendy.webp">
+        <h3 style="color: var(--project-color-2);">Animations</h3>
+        <p>The disjointed parts that form Sendy's body <b>can be stretched and rearranged to easily express velocity, rest or pain</b>. </p>
+        <video autoplay muted loop id="videodetail" style="max-width: 500px;">
+          <source src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-animation-idle.mp4" type="video/mp4">
+        </video>
+        <p>
+          <b>Idle:</b> Sendy is always hovering with its body pulsating.
+        </p>
+        <video autoplay muted loop id="videodetail" style="max-width: 500px;">
+          <source src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-animation-flight.mp4" type="video/mp4">
+        </video>
+        <p>
+          <b>Flight:</b> when Sendy sends itself from one point to another, it momentarily disappears from the screen to land somewhere else.
+        </p>
+        <video autoplay muted loop id="videodetail" style="max-width: 500px;">
+          <source src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-animation-flinch.mp4" type="video/mp4">
+        </video>
+        <p>
+          <b>Flinch:</b> when malware damages Sendy it will flinch slightly.
+        </p>
+        <video autoplay muted loop id="videodetail" style="max-width: 500px;">
+          <source src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-animation-knock-out.mp4" type="video/mp4">
+        </video>
+        <p>
+          <b>Knock out:</b> if Sendy runs out of battery, its body will fall backwards and into pieces.
+        </p>
+        <h2>NPCs</h2>
+        <p>I couldn't work on the NPCs until late in the development of the game, when the latest version became stable and I had enough knowledge to apply some very rudimentary automated behaviour.</p>
+        <h3 style="color: var(--project-color-2);">Blocky</h3>
+        <p>Bright, red, with dark sunglasses, it was designed to convey heaviness. <b>Blockies clog the path</b>, but make slow jumps from time to time that let Sendy slip underneath and keep advancing. </p>
+        <img loading="lazy" alt="Blocky 3D render" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-render-blocky.webp">
+        <h3 style="color: var(--project-color-2);">Bouncy</h3>
+        <p>Also bright, red, with dark sunglasses, <b>Bouncies make ample, quick jumps</b> and may bump into a careless Sendy from time to time. They usually wander on spinning platforms, which makes them faster and harder to avoid. </p>
+        <img loading="lazy" alt="Bouncy 3D render" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-render-bouncy.webp">
+        <h3 style="color: var(--project-color-2);">Softie</h3>
+        <p>The blue one with the spectacles and soft edges. Softie is the personification of software and <b>will assist Sendy during the tutorial to teach the player how to play the game</b>. </p>
+        <img loading="lazy" alt="Softie 3D render" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-render-softie.webp">
+        <h2>Items and background</h2>
+        <p>I added them at the very end of the development process, once the game was practically finished and functioning properly.</p>
+        <h3 style="color: var(--project-color-2);">Items</h3>
+        <p>All three designs are a combination of a real life object (their function in the game), with a common icon from a mobile interface (their appearance in the Textory world).</p>
+        <img loading="lazy" alt="Items 3D render" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-render-items.webp">
+        <p>The text message looks both like a speech bubble and a letter, the battery healer looks like a AA battery and a smoothie, and the signal healer looks like a cone of fries and three wi-fi bars.</p>
+        <h3 style="color: var(--project-color-2);">Background</h3>
+        <p>I designed 90 different buildings and turned them into a repeating pattern to depict a busy background city.</p>
+        <img loading="lazy" alt="City 3D render" src="img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-render-city.webp">
+        <p>In the final game, I also added a few moving, oval-shaped clouds to accentuate the sense of depth and height.</p>
+        <h2>Gameplay</h2>
+        <p>This is a gameplay recording of the <b>final version of the game</b>. </p>
+      </section>
+      <div class="youtubeplayer">
+        <iframe loading="lazy" width='1920' height='1080' src="https://www.youtube.com/embed/G30MYUE65sE&autoplay=1" srcdoc="
+																																					
+																																			<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style>
+																																			<a href=https://www.youtube.com/embed/G30MYUE65sE?autoplay=1>
+																																				<img src=img/textory/ramon-bosch-game-design-textory-mobile-game-unreal-engine-ue4-gameplay-video-thumbnail.webp alt='Ice Cream Disaster DEMO Trailer'>
+																																					<span>▶</span>
+																																				</a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Ice Cream Disaster DEMO Trailer">
+        </iframe>
+      </div>
+      <section class="main-module">
+        <p>The app <b>performed correctly on mobile devices and the framerate remained stable for the whole duration of the demo</b>. The controls weren't very precise at times and the design of the level was very rough. If I had proceeded with the project's development, I would have taken care of solving those two problems at first. </p>
+        <hr width="50px" style="border: 2px var(--project-color-2) solid; ">
+        <p>
+          <br>In conclusion, I'm happy I managed to develop a game this far in the span of only two months. Not only did I <b>become more proficient in developing with Unreal Engine 4 but also modeling with Blender</b>, another new tool for me at the time. I learned about the limitations of developing for mobile devices and <b>was able to deal with basic development mistakes in a risk-free environment</b>. Most of the lessons I learned by developing Textory <b>became useful when I worked on my next game</b>, and so I inted to keep getting better and better with every new game I make. </b>
+        </p>
+        <div class="separator">
+          <a alt="Visit next project" title="Go to next project" href="chilly-chuck.html">
+            <p style="color: var(--project-color-2); text-decoration: underline;">NEXT PROJECT →</p>
+            <h3>Chilly Chuck</h3>
+          </a>
+        </div>
+      </section>
+      <section class="main-module">
+        <div>
+          <h3 style="color: var(--project-color-2); margin-top: 0;"> WANNA CHAT? </h3>
+          <p> I’m open to possible job offers, freelance work or just to chat a little. I’ll also be happy to respond any design-related questions you have in mind! </p>
+          <a href="mailto:hello@ramonbosch.com" title="Send me a mail" alt="Send a mail to Ramon Bosch" class="button"> MAIL ME </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-section">
+        <a title="Go to home" alt="Home" href="index.html">
+          <img height="20px" title="Home" width="auto" src="/ramon-bosch-porfolio-main-icon.svg" alt="Main logo">
+        </a>
+        <p> Every problem is a <br>solution to be designed </p>
+        <p> ©2022 </p>
+      </div>
+      <div class="footer-column">
+        <div class="footer-section">
+          <p> Social </p>
+          <p>
+            <a href="https://www.linkedin.com/in/ramonboschdesign/" title="Go to Linkedin" alt="Link to Linkedin profile">LinkedIn</a>
+          </p>
+          <p>
+            <a href="https://www.behance.net/ramonbosch" title="Go to Behance" alt="Link to Behance profile">Behance</a>
+          </p>
+          <p>
+            <a href="https://www.behance.net/ramonbosch" title="Go to Instagram" alt="Link to Instagram profile">Instagram</a>
+          </p>
+          <p>
+            <a href="https://github.com/RamonBosch" title="Go to HitHub" alt="Link to GitHub profile">GitHub</a>
+          </p>
+        </div>
+        <div class="footer-section">
+          <p> Contact </p>
+          <p>
+            <a href="mailto:hello@ramonbosch.com" title="Mail me" alt="Link to send a mail to Ramon Bosch">Email</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/app.js"></script>
+  </body>
+</html>

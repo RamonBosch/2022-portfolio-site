@@ -1,120 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+
+DESIGNED AND DEVELOPED
+BY RAMON BOSCH C 2022
+
+   |‾| |‾| |‾‾‾‾‾/
+           |    {
+   |_| |_| |_____\
+
+-->
+<html lang="en" color-mode="light">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f66575">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramon Bosch 🖼️ Visual Design Portfolio</title>
+    <script>
+      if (localStorage.getItem("color-mode") === "dark" || (window.matchMedia("(prefers-color-scheme: dark)").matches && !localStorage.getItem("color-mode"))) {
+        document.documentElement.setAttribute("color-mode", "dark");
+      }
+    </script>
+    <meta name="description" content="Ice Cream Disaster's game design case study. Discover the process behind the design, development and launch of this arcade mobile game for iOS and Android.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;400;700&display=swap" rel="stylesheet">
-    <script defer src="app.js"></script>
-    <title>Ramon Bosch Portfolio | Tommy Mel's</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon-portfolio.ico" type="image/x-icon" />
   </head>
   <body>
-
-    <div class="hero-div" style="background-image: url(img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-detail-tommy-mels-hero-image.png);"></div>
-
-
-<!-- TOP BAR -->
-    
-    <div class="top-bar">
-      <div class="top-bar-items">
-          <a href="/index.html">
-            <img src="img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-main-logotype.png">
-          </a>
-          <button id="burger-button"><img id="burger-button-pic" src="img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-menu-burger.png"></button>
+    <nav>
+      <a title="Go to home" alt="Home" href="index.html">
+        <img height="20px" title="Home" width="auto" src="/ramon-bosch-porfolio-main-icon.svg" alt="Main logo">
+      </a>
+      <div class="mode-toggler">
+        <button class="toggler-border light--hidden" alt="Toggle to light mode" title="Toggle light or dark mode">
+          <div class="toggler-switch"></div>
+        </button>
+        <button class="toggler-border dark--hidden" alt="Toggle to dark mode" title="Toggle light or dark mode">
+          <div class="toggler-switch"></div>
+        </button>
       </div>
-      <div id="top-links" class="hide">
-        <div id="top-links" class="top-bar-links">
+    </nav>
+    <main>
+      <header class="header-project-page">
+
+
+        <h1>Tommy Mel's</h1>
+
+
+      </header>
+      <section class="main-module">
+        <p>A rejected, unrequested visual identity redesign. Tommy Mel's was a fun, 50s-inspired Spanish brand of restaurants, and this is a re-imagining of their brand.</p>
+
+
+        <img loading="lazy" alt="Delivery bags" src="img/tommy-mels/ramon-bosch-visual-graphic-design-tommy-mels-bag.webp">
+        <img loading="lazy" alt="Logo design sketches" src="img/tommy-mels/ramon-bosch-visual-graphic-design-tommy-mels-logo.webp">
+        <img loading="lazy" alt="Exterior sign" src="img/tommy-mels/ramon-bosch-visual-graphic-design-tommy-mels-sign.webp">
+        <img loading="lazy" alt="Burguer box" src="img/tommy-mels/ramon-bosch-visual-graphic-design-tommy-mels-burguer-box.webp">
+
+
+        <p>I began the project by sketching, tracing, printing, and correcting versions of the logo in Illustrator. Then, I draw the different illustrations and typographic compositions for the pattern.</p>
+
+        <img loading="lazy" alt="Illustration process" src="img/tommy-mels/ramon-bosch-visual-graphic-design-tommy-mels-illustrations.webp">
+        <img loading="lazy" alt="Wrapping paper" src="img/tommy-mels/ramon-bosch-visual-graphic-design-tommy-mels-paper.webp">
+        <img loading="lazy" alt="Menu" src="img/tommy-mels/ramon-bosch-visual-graphic-design-tommy-mels-menu.webp">
+        <img loading="lazy" alt="Paper cups" src="img/tommy-mels/ramon-bosch-visual-graphic-design-tommy-mels-cups.webp">
+
+        <p>The menu was designed in InDesign, the rest of the mockups were designed in Illustrator and built using Photoshop.</p>
+        <img loading="lazy" alt="Coasters" src="img/tommy-mels/ramon-bosch-visual-graphic-design-tommy-mels-coaster.webp">
+
+
+        <div class="separator">
+
+
+          <a alt="Visit next project" title="Go to next project" href="corsicana.html">
+
+
+            <p style="color: var(--project-color-2); text-decoration: underline;">NEXT PROJECT →</p>
+
+
+            <h3>Corsicana</h3>
+
+
+          </a>
+        </div>
+      </section>
+      <section class="main-module">
+        <div>
+          <h3 style="color: var(--project-color-2); margin-top: 0;"> WANNA CHAT? </h3>
+          <p> I’m open to possible job offers, freelance work or just to chat a little. I’ll also be happy to respond any design-related questions you have in mind! </p>
+          <a href="mailto:hello@ramonbosch.com" title="Send me a mail" alt="Send a mail to Ramon Bosch" class="button"> MAIL ME </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-section">
+        <a title="Go to home" alt="Home" href="index.html">
+          <img height="20px" title="Home" width="auto" src="/ramon-bosch-porfolio-main-icon.svg" alt="Main logo">
+        </a>
+        <p> Every problem is a <br>solution to be designed </p>
+        <p> ©2022 </p>
+      </div>
+      <div class="footer-column">
+        <div class="footer-section">
+          <p> Social </p>
           <p>
-            <a href="index.html">Home</a><br>
-            <a href="about.html">About</a><br>
-            <a href="visualittle.html">Visualittle</a>
+            <a href="https://www.linkedin.com/in/ramonboschdesign/" title="Go to Linkedin" alt="Link to Linkedin profile">LinkedIn</a>
+          </p>
+          <p>
+            <a href="https://www.behance.net/ramonbosch" title="Go to Behance" alt="Link to Behance profile">Behance</a>
+          </p>
+          <p>
+            <a href="https://www.behance.net/ramonbosch" title="Go to Instagram" alt="Link to Instagram profile">Instagram</a>
+          </p>
+          <p>
+            <a href="https://github.com/RamonBosch" title="Go to HitHub" alt="Link to GitHub profile">GitHub</a>
+          </p>
+        </div>
+        <div class="footer-section">
+          <p> Contact </p>
+          <p>
+            <a href="mailto:hello@ramonbosch.com" title="Mail me" alt="Link to send a mail to Ramon Bosch">Email</a>
           </p>
         </div>
       </div>
-    </div>
-
-    <!-- TOP BAR END -->
-    
-
-    
-    <div class="text-container">
-      <a href="/lazy.html"><p style="text-decoration: underline; display: inline; float: left;">← Previous</p></a>
-      <a href="/corsicana.html"><p style="text-decoration: underline; display: inline; float: right;">Next →</p></a>
-      
-
-    </div>
-
-    <div style="margin-top: 10px;" class="text-container">
-        <h1>Tommy Mel's</h1>
-        <p style="color: #f66575;"><strong>2017 |</strong> Lettering, illustration and visual identity design</p>
-        <p>A rejected visual identity redesign. Tommy Mel's was a 70's American-vibe chain of restaurants born in Spain, and this is a re-imagining of their brand.</p>
-          <p>It's also my first lettering project ever. It was really fun to bring to life this little world of American cliches.</p>
-    </div>
-    <div class="img-container">
-    <img src="/img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-detail-tommy-mels-logo-sketches-01.webp"></img>
-    <img src="/img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-detail-tommy-mels-logo-sketches-02.webp"></img>
-    <img src="/img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-detail-tommy-mels-logo-evolution.webp"></img>
-    <img src="/img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-detail-tommy-mels-logo.webp"></img>
-    <img src="/img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-detail-tommy-mels-animated-logo.gif"></img>
-    <img src="/img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-detail-tommy-mels-icon-design.webp"></img>
-    <img src="/img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-detail-tommy-mels-illustration-design.webp"></img>
-    <img src="/img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-detail-tommy-mels-illustration-pattern.webp"></img>
-    <img src="/img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-detail-tommy-mels-menu.webp"></img>
-    <img src="/img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-detail-tommy-mels-food.webp"></img>
-    <img src="/img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-detail-tommy-mels-neon-sign.webp"></img>
-    
-    <div style="height: 20px;"></div>
-  </div>
-  <div class="text-software" >
-    <p>Illustrator, After Effects, Photoshop, InDesign</p>
-  </div>
-    <div class="text-container" style="height: 10px; margin-bottom: 20px;">
-      
-      <a href="/lazy.html"><p style="text-decoration: underline; display: inline; float: left;">← Previous</p></a>
-      <a href="/corsicana.html"><p style="text-decoration: underline; display: inline; float: right;">Next →</p></a>
-      
-    </div>
-
-    <div style="margin-bottom: 100px" class="text-container">
-      <h2>Let's talk!</h2>
-      <p>I'll be glad to answer your questions or send you my CV if you want to work together! What do you say?</p>
-      <a href="mailto:hello@ramonbosch.com"><button>Mail me →</button></a>
-
-      
-  </div>
-    
-  
-
-
-    <!-- FOOTER -->
-        
-
-    <div class="footer">
-      <div class="inner-footer">
-          <a the target=”_blank” href="https://www.behance.net/ramonbosch">
-            <img src="img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-icon-behance.png">
-          </a>
-          <a the target=”_blank” href="https://www.instagram.com/ramonboschdesign">
-            <img src="img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-icon-instagram.png">
-          </a>
-          <a the target=”_blank” href="https://www.linkedin.com/in/ramonboschdesign">
-            <img src="img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-icon-linkedin.png">
-          </a>
-          <a the target=”_blank” href="mailto:hello@ramonbosch.com">
-            <img src="img/portfolio-branding-visual-identity-graphic-design-quiz-ramon-bosch-icon-mail.png">
-          </a>
-      </div>
-      <div class="inner-footer">
-        <div class="footer-copyright">© Ramon Bosch 2022</div>
-      </div>
-    </div>
-
-
-    <!-- FOOTER END -->
-
-
+    </footer>
+    <script src="/app.js"></script>
   </body>
 </html>

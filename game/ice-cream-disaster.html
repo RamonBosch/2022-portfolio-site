@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!--
+
+DESIGNED AND DEVELOPED
+BY RAMON BOSCH C 2022
+
+   |‾| |‾| |‾‾‾‾‾/
+           |    {
+   |_| |_| |_____\
+
+-->
+<html lang="en" color-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramon Bosch 🕹️ Game Design Portfolio</title>
+    <script>
+      if (localStorage.getItem("color-mode") === "dark" || (window.matchMedia("(prefers-color-scheme: dark)").matches && !localStorage.getItem("color-mode"))) {
+        document.documentElement.setAttribute("color-mode", "dark");
+      }
+    </script>
+    <meta name="description" content="Ice Cream Disaster's game design case study. Discover the process behind the design, development and launch of this arcade mobile game for iOS and Android.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon-portfolio.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <nav>
+      <a title="Go to home" alt="Home" href="index.html">
+        <img height="20px" title="Home" width="auto" src="/ramon-bosch-porfolio-main-icon.svg" alt="Main logo">
+      </a>
+      <div class="mode-toggler">
+        <button class="toggler-border light--hidden" alt="Toggle to light mode" title="Toggle light or dark mode">
+          <div class="toggler-switch"></div>
+        </button>
+        <button class="toggler-border dark--hidden" alt="Toggle to dark mode" title="Toggle light or dark mode">
+          <div class="toggler-switch"></div>
+        </button>
+      </div>
+    </nav>
+    <main>
+      <header class="header-project-page">
+        <h1>Ice Cream Disaster</h1>
+      </header>
+      <section class="main-module">
+        <div>
+          <p class="little-title" style="margin-bottom: 0px;"> SUMMARY </p>
+          <p>On the 28th of May of 2022 I released Ice Cream Disaster, <b>a completely free mobile game I developed in the span of nine months</b> using Unreal Engine 4's Blueprint system. </p>
+          <img loading="lazy" alt="Ice Cream Disaster summary banner" src="/ux/img/ice-cream-disaster/ramon-bosch-ux-ui-ice-cream-disaster-mobile-game-app-summary-banner.png">
+          <p> Between Android and iOS, the game has been downloaded by <b>more than 8K players</b> and reviewed by more than a hundred users with an <b>average rating of 4.9</b>. The game got shout outs from <a style="text-decoration: underline;" href="https://www.pocketgamer.com/ice-cream-disaster/out-now/">PocketGamer</a>, <a style="text-decoration: underline;" href="https://www.maxiapple.com/2022/06/ice-cream-disaster-jeu-video-ios-iphone-ipad-android.html">MaxiApple</a>, <a style="text-decoration: underline;" href="https://www.softandapps.info/2022/06/07/ice-cream-disaster-pon-a-prueba-tu-habilidad-con-este-juego-para-android/">Soft&Apps</a> and <a style="text-decoration: underline;" href="https://phenogames.com/ice-cream-disaster-te-permite-tomar-helado-mientras-te-caen-encima-ovnis-pajaros-y-meteoritos-ya-disponible-en-ios-y-android-gratis/">Phenogames</a>. </p>
+        </div>
+      </section>
+      <section class="main-module">
+        <p>Most game developers begin coding by aping a simple, classic game. <b>As they learn ways to mimic that game's mechanics, their skill set improves</b>. Ice Cream Disaster is my approach to Tetris. </p>
+        <h2>Early development</h2>
+        <p> I came up with a fun idea about <b>catching ice cream scoops that fall from the sky, and keeping them balanced by using physics</b>. In less than a week, I <b>coded a draft prototype</b> to test if it was fun. </p>
+        <video autoplay muted loop id="videodetail">
+          <source src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-prototype.mp4" type="video/mp4">
+        </video>
+        </div>
+        <div>
+          <p style="font-family: 'Courier New',monospace; margin-right: 100%; margin-bottom: 10px;">PSEUDOCODE:</p>
+          <ul>
+            <li>The player possesses a character object that can be dragged along the X axis.</li>
+            <li>This character object is standing on an invisible platform to prevent it from endlessly falling.</li>
+            <li>Every X seconds, an offscreen spawner randomly generates 'scoop' objects along the X axis. These objects fall and can go though the invisible platform the character object is standing on.</li>
+            <li>Any object of type 'orphan scoop' becomes 'child scoop' and gets attached to either the character object or to other 'child scoop' objects when collision with this second object starts.</li>
+            <li>Every time an 'orphan scoop' object becomes a 'child scoop' object its value is added to the game's total score.</li>
+            <li>Scoops can have different values, which are defined the moment they're spawned.</li>
+          </ul>
+        </div>
+        <p>It was a fun prototype, and <b>it could be fleshed into a full game</b> by adding many different scoops with different values and obstacles. </p>
+        <h3 style="color: var(--project-color-1);">Gravity and camera movement</h3>
+        <p>Due to collision problems, I couldn't figure out how to make scoops tilt and fall once they were attached to other objects. It took me many trial and error experiments to <b>come up with a working collision foundation</b>. </p>
+        <img style="max-width: 500px;" loading="lazy" alt="Collision detail sketches" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-collision-detail.webp">
+        <p>Another pressing issue was how quickly the scoops piled up, thus disappearing offscreen. So I thought about <b>a system that smoothly moved the camera away considering the amount of 'child scoop' objects spawned</b>. </p>
+        <img loading="lazy" alt="Camera detail sketches" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-camera-detail.webp">
+        <p>
+          <b>The object spawner also moves up and down according to the distance between the player and the camera</b>, so the scoops always appear tightly offscreen, never taking an excessive amount of time to fall.
+        </p>
+        <video autoplay muted loop id="videodetail">
+          <source src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-prototype-camrea-gravity.mp4" type="video/mp4">
+        </video>
+        <h2>Visuals</h2>
+        <p>The game seemed to be heading in a good direction. Since I had no previous experience, I considered <b>it was a good time to start experimenting and testing the visual side of the game</b> to be sure about what the mobile devices would be able to handle. </p>
+        <h3 style="color: var(--project-color-1);">Scoop designs</h3>
+        <p>I wanted to <b>design a distinct face for the scoops, so it could turn into a recognisable icon to represent the game</b>. I started sketching and implementing different designs in various iterations to make sure which one worked better. </p>
+        <img loading="lazy" alt="Scoop design sketches" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-scoop-design-sketches.webp">
+        <p>My first idea was to use <b>one single face with many expressions</b>, including happiness, grief and fear. The faces I designed in the first iteration only have one colour, this made them difficult to work on non-light materials. </p>
+        <img loading="lazy" alt="First visual iteration" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-visual-iteration-01.webp">
+        <p>On the second iteration I applied a <b>dark stroke around the eyes so they could be identified above any colour</b>. While this made them easier to separate from the background, the thin strokes were hard to see when the camera zoomed out. </p>
+        <img loading="lazy" alt="Second visual iteration" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-visual-iteration-02.webp">
+        <p>
+          <b>In these iterations, the scoops would react to inclination</b> and trigger a scared look when it surpased 45 degrees. They would also react to falling with either a happy face or a sad face if they were falling out of the screen. I also added eyes to the cone that would sweat when more than ten scoops were stacked.
+        </p>
+        <h3 style="color: var(--project-color-1);">Character design and interface</h3>
+        <p>While still defining the look of the scoops, <b>I also started working on the character design, to make them both match the same style</b>. The character would be a key element in the game's little story. I also thought unlocking and choosing characters and having them catch the scoops and eating them was more fun than just seeing the scoops disappear. </p>
+        <img loading="lazy" alt="Character design" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-character-design.webp">
+        <p>
+          <b>The characters would react to the current number of scoops</b>, have an 'eat' animation every time the score was saved, and also look at the cone's direction.
+        </p>
+        <video autoplay muted loop id="videodetail">
+          <source src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-adding-character.mp4" type="video/mp4">
+        </video>
+        <p>
+          <b>I also started designing the game's interface, which I wanted to be very simple</b>. There is one button that pops up when there's at least one scoop to be eaten, pressing the cone button consumes one of the two cones the player has per game and saves the current score.
+        </p>
+        <p>
+          <b>There's also a score counter</b> that tells how many points the player will save if the cone button is pressed. Both elements of the interface are at the bottom of the screen for easier reach and to allow the maximum possible top space for the game to unfold.
+        </p>
+        <h3 style="color: var(--project-color-1);">Background</h3>
+        <p>The background was the only element left to complete the game screen. My idea was to have <b>many flat layers in front of each other to give a sense of depth</b>. </p>
+        <img style="max-width: 500px;" loading="lazy" alt="Background sketch detail" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-background-detail.webp">
+        <p>These layers would change depending on the level. At the beginning of a game, the player can only see two or three layers, but <b>as the number of stacked scoops increases, the top layers become visible </b>and create a beautiful background illustration. </p>
+        <img loading="lazy" alt="Background designs" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-background-design.webp">
+        <p>
+          <b>The layers move up and down as the camera goes backward or forward</b>. In the final version, some layers have simple animations to better convey the idea of a living landscape.
+        </p>
+        <video autoplay muted loop id="videodetail">
+          <source src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-adding-background.mp4" type="video/mp4">
+        </video>
+        <p>At this point, it was possible to play a full game and have a final score screen. It felt like the perfect time to <b>start testing how it performed on mobile devices</b>. As it was my first game, I wasn't aware that I should have started testing on devices way earlier. </p>
+        <h3 style="color: var(--project-color-1);">Testing on devices</h3>
+        <p>After installing and running the game it became obvious that <b>the performance was unacceptable</b>. The framerate would drop after less than a minute of gameplay and never recover. </p>
+        <p>
+          <b>I started looking for options to optimize the game</b>. First I got rid of all shadows, which looked sharp and dark on mobile and required constant calculations, draining the CPU. To do so, <b>I deleted all lights and turned all materials into emitters to achieve a flat, cell shading look</b> that worked nicely.
+        </p>
+        <img loading="lazy" alt="Screenshots of the cell shading version" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-cell-shading-version.webp">
+        <p>Secondly, <b>I began simplifying the meshes and keeping count of the number of polygons in the screen</b>. I redesigned the character and made the cone, hand, scoops and background lighter. I also redesigned the interface to keep it as minimal as possible. </p>
+        <img loading="lazy" alt="Screenshots of the simplified version" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-simplified-meshes.webp">
+        <p>Even after all these changes, the game's performance was still sloppy. I eventually <b>discarded a few of the already implemented, non-essential features</b>, like changing the expression on the face of the scoops, since it required the game to constantly check the inclination and neighbouring colliders of each scoop at all times. </p>
+        <h3 style="color: var(--project-color-1);">Main menu</h3>
+        <p>Now that the first level was performing alright, I was about to start developing a new level, but soon I realised I needed a quick way to switch between stages for easy testing, thus why <b>my next step was to design and develop the main menu</b>. </p>
+        <p>The main menu evolved as new features were added to the game. It controls and is linked to how the game is going to behave, so <b>every new feature is either reflected or has to be actionable from it</b>. This particular menu has animations when navigating from one screen to another, so it took me a long time to develop and make it work properly. </p>
+        <img loading="lazy" alt="Main menu screen designs" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-main-menu.webp">
+        <p>These are the four different screens I developed:</p>
+        <ul>
+          <li>
+            <b>Main:</b> from where the player can access any other screen and have a quick look at the game's current parameters.
+          </li>
+          <li>
+            <b>Unlockables:</b> there are three different versions of this screen, one for every kind of item the player an unlock.
+          </li>
+          <li>
+            <b>Collectibles:</b> a screen the player can use to track how many flavours are still missing. A secondary detail screen gives information on their value and where to find them.
+          </li>
+          <li>
+            <b>Settings:</b> to adjust the audio levels, language, cone button position and delete the game.
+          </li>
+        </ul>
+        <h3 style="color: var(--project-color-1);">Intro and tutorial</h3>
+        <p>The prototype was slowly turning into a full game. I wanted to get players to test it and had the idea of releasing a demo version with just the first four levels. <b>I needed a brief story to explain the context of the game, so I added a short 2D intro</b>. </p>
+        <img loading="lazy" alt="Intro sequence screenshots" src="/ux/img/ice-cream-disaster/ramon-bosch-ux-ui-ice-cream-disaster-mobile-game-app-intro-secuence.webp">
+        <p>
+          <b>I also programmed a tutorial to teach the users how to play this simple game</b>. As onboarding process, the intro would play the first time the app is opened, followed by the tutorial.
+        </p>
+        <video autoplay muted loop id="videodetail">
+          <source src="/ux/img/ice-cream-disaster/ramon-bosch-ux-ui-ice-cream-disaster-mobile-game-app-tutorial.mp4" type="video/mp4">
+        </video>
+        <h2>Demo release</h2>
+        <p>To build interest in the upcoming launch, <b>I designed promotional assets to show how the game looked to potential players</b>. This is the trailer I used to promote the release of the DEMO version. </p>
+      </section>
+      <div class="youtubeplayer">
+        <iframe loading="lazy" width='1920' height='1080' src="https://www.youtube.com/embed/PzCmeu4NtTA&autoplay=1" srcdoc="
+																													
+																												<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style>
+																												<a href=https://www.youtube.com/embed/PzCmeu4NtTA?autoplay=1>
+																													<img src=img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-youtube-thumbnail-demo.webp alt='Ice Cream Disaster DEMO Trailer'>
+																														<span>▶</span>
+																													</a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Ice Cream Disaster DEMO Trailer">
+        </iframe>
+      </div>
+      <section class="main-module">
+        <p>Releasing a demo was key to getting first-hand feedback from unbiased players. <b>I wanted testers to help me spot bugs and pain points so I could fix them before going forward with the development of the game</b>. </p>
+        <h3 style="color: var(--project-color-1);">Social networks</h3>
+        <p>To spread the word about the game's development, I started posting updates about its progress one month after I began working on it. After releasing the demo on Google Play and sharing it in many game forums, <b>I got more than 1K users to test it. It was well received and gave me plenty of useful feedback</b>. </p>
+        <img loading="lazy" alt="Social media screenshots" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-social-media.webp">
+        <p>
+          <b>Social network profiles also helped me rank higher in Google Search</b>. Today, four months after I stopped creating new content for the game, 11 of the results on the first page are still related to Ice Cream Disaster.
+        </p>
+        <img style="max-width: 500px;" loading="lazy" alt="Google search screenshot" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-google-search.webp">
+        <p>The DEMO version of Ice Cream Disaster is still available for Android on Google Play. <b>Push the button to download it!</b>
+        </p>
+        <div style="flex-direction: row; background-color: transparent; padding-top: 0; padding-bottom: 0;">
+          <a target="_blank" style="background-color: var(--project-color-1); color: #fff;" href="https://play.google.com/store/apps/details?id=com.RamonBosch.IceCreamDisasterDEMO" title="Get the demo" alt="Go to Google Play" class="button"> GET THE DEMO </a>
+        </div>
+        <h2>Further development</h2>
+        <p>During the next months, <b>I developed the rest of the levels of the game</b>, a total of 9 levels. After debugging and adding a few new features (like a pause button and cone upgrades), the game was practically ready for launch. </p>
+        <h3 style="color: var(--project-color-1);">Cinematic segments, BGM and translation</h3>
+        <p>Repurposing elements from the tutorial and the intro, <b>I added short animations and dialog scenes for every level</b>, to tell the progress of a little fun story. These scenes would trigger when the player entered a level for the first time. </p>
+        <img loading="lazy" alt="Cinemati scenes screenshots" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-cinematic.webp">
+        <p>I also <b>worked on the game's soundtrack</b>, fully made using GarageBand. The whole game has the same melody which is played in a myriad of styles, including low-fi beats, country, disco, cha-cha-cha and jazz. </p>
+        <img loading="lazy" alt="BGM GarageBand project" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-soundtrack.webp">
+        <p>Lastly, <b>I translated the game into Spanish, French and Catalan</b> to make it available to the maximum number of users possible. </p>
+        <h3 style="color: var(--project-color-1);">Testing and balance</h3>
+        <p>It was <b>time to play long sessions and take notes on how to balance the game's progress</b>. I would usually start from level one and keep advancing, trying to mimic different player behaviours. </p>
+        <img loading="lazy" alt="Long gameplay screenshots" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-game-screenshots.webp">
+        <p>I would <b>make sure the difficulty level increased smoothly and naturally</b>, that playing harder levels paid back with higher scores, that there were no boring stages and that the unlockables could be obtained on a regular basis. </p>
+        <h3 style="color: var(--project-color-1);">Optimisation</h3>
+        <p>After packaging the finished game, I found out that, for a mobile game app, it had a <b>less than acceptable total weight</b>. I spent two more weeks optimising the game further to reduce its size. </p>
+        <ul>
+          <li>
+            <b>Code with modules:</b> replacing redundant code with templates that could be altered by simply modifying variables and objects.
+          </li>
+          <li>
+            <b>Optimize meshes:</b> deleting all unseen polygons and using smooth rendering to decrease the complexity of the meshes.
+          </li>
+        </ul>
+        <img loading="lazy" alt="Obstacle mesh wireframes" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-mesh-optimization.webp">
+        <ul>
+          <li>
+            <b>Power of two textures:</b> edit all game's textures to fit in the power of two atlases. The picture below shows all the textures required for all the obstacles in the game.
+          </li>
+        </ul>
+        <img style="max-width: 500px;" loading="lazy" alt="Obstacle texture atlas" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-texture-atlas.webp">
+        <ul>
+          <li>
+            <b>Compress audio files:</b> using a compression tool to experiment and find the most acceptable level of compression.
+          </li>
+          <li>
+            <b>Minimize materials: </b>by using different UVs on the same material or colour palette grids.
+          </li>
+        </ul>
+        <h2>Launch</h2>
+        <p>Finally, <b>the game was released on the 29th of May of 2022</b> for both Android and iOS. This is the clip I used in the mobile stores: </p>
+      </section>
+      <div class="youtubeplayer">
+        <iframe loading="lazy" width='1920' height='1080' src="https://www.youtube.com/embed/MKWehh_objg&autoplay=1" srcdoc="
+																																					
+																																				<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style>
+																																				<a href=https://www.youtube.com/embed/MKWehh_objg?autoplay=1>
+																																					<img src=img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-youtube-thumbnail-trailer.webp alt='Ice Cream Disaster DEMO Trailer'>
+																																						<span>▶</span>
+																																					</a>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Ice Cream Disaster DEMO Trailer">
+        </iframe>
+      </div>
+      <section class="main-module">
+        <p>I spent the last two weeks before the release of the game <b>generating content to promote it</b>. </p>
+        <video style="max-width: 500px;" autoplay muted loop id="videodetail">
+          <source src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-promo-video.mp4" type="video/mp4">
+        </video>
+        <h3 style="color: var(--project-color-1);">Post-launch</h3>
+        <p>Once the game came out, I spent the next two months <b>updating social media accounts and sharing it in videogame forums and product databases</b>. I also contacted and sent press notes to many videogame blogs, which lead to the publication of a few articles that talked about it. </p>
+        <img loading="lazy" alt="Article screenshots" src="img/ice-cream-disaster/ramon-bosch-game-design-ice-cream-disaster-mobile-ios-android-app-articles.webp">
+        <p>
+          <b>The reception of the final game was mostly positive</b>. Only minor bugs were reported, so I released an update of the game a few days after launch to address them.
+        </p>
+        <hr width="50px" style="border: 2px var(--project-color-1) solid; ">
+        <p>
+          <br>In conclusion, <b>I'm happy with what I've learned by developing Ice Cream Disaster</b>. It's my first game and I did it with a non-existent budget, I consider it a mild success that, half a year after its release date, keeps bringing daily new users and excellent reviews. If you'd like to try Ice Cream Disaster <b>you can download it for iOS or Android, it is completely free</b>.
+        </p>
+        <div style="flex-direction: row; background-color: transparent; padding-top: 0; padding-bottom: 0;">
+          <a style="background-color: var(--project-color-1); color: #fff;" href="https://play.google.com/store/apps/details?id=com.RamonBosch.IceCreamDisaster" title="Go to Google Play" alt="Ice Cream Disaster in Google Play" class="button"> ANDROID </a>
+          <a style="background-color: var(--project-color-1); color: #fff;" href="https://apps.apple.com/us/app/ice-cream-disaster/id1624742111" title="Go to App Store" alt="Ice Cream Disaster in the App Store" class="button"> iOS </a>
+        </div>
+        <div class="separator">
+          <a alt="Visit next project" title="Go to next project" href="textory.html">
+            <p style="color: var(--project-color-1); text-decoration: underline;">NEXT PROJECT →</p>
+            <h3>Textory</h3>
+          </a>
+        </div>
+      </section>
+      <section class="main-module">
+        <div>
+          <h3 style="color: var(--project-color-1); margin-top: 0;"> WANNA CHAT? </h3>
+          <p> I’m open to possible job offers, freelance work or just to chat a little. I’ll also be happy to respond any design-related questions you have in mind! </p>
+          <a href="mailto:hello@ramonbosch.com" title="Send me a mail" alt="Send a mail to Ramon Bosch" class="button"> MAIL ME </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-section">
+        <a title="Go to home" alt="Home" href="index.html">
+          <img height="20px" title="Home" width="auto" src="/ramon-bosch-porfolio-main-icon.svg" alt="Main logo">
+        </a>
+        <p> Every problem is a <br>solution to be designed </p>
+        <p> ©2022 </p>
+      </div>
+      <div class="footer-column">
+        <div class="footer-section">
+          <p> Social </p>
+          <p>
+            <a href="https://www.linkedin.com/in/ramonboschdesign/" title="Go to Linkedin" alt="Link to Linkedin profile">LinkedIn</a>
+          </p>
+          <p>
+            <a href="https://www.behance.net/ramonbosch" title="Go to Behance" alt="Link to Behance profile">Behance</a>
+          </p>
+          <p>
+            <a href="https://www.behance.net/ramonbosch" title="Go to Instagram" alt="Link to Instagram profile">Instagram</a>
+          </p>
+          <p>
+            <a href="https://github.com/RamonBosch" title="Go to HitHub" alt="Link to GitHub profile">GitHub</a>
+          </p>
+        </div>
+        <div class="footer-section">
+          <p> Contact </p>
+          <p>
+            <a href="mailto:hello@ramonbosch.com" title="Mail me" alt="Link to send a mail to Ramon Bosch">Email</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/app.js"></script>
+  </body>
+</html>
