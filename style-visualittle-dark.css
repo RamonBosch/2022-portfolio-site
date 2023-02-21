@@ -1,7 +1,7 @@
 :root {
 	--main-color: #b5d5e1;
-	--dark-color: #565656;
-	--clear-color: #fff;
+	--dark-color: #fff;
+	--clear-color: rgb(41, 41, 41);
 }
 
 * {
@@ -19,11 +19,13 @@ h2 {
 	font-weight: 600;
 	font-size: 34px;
 	line-height: 46px;
+	color: var(--main-color);
 }
 
 h3 {
 	font-weight: 600;
 	font-size: 24px;
+	color: var(--main-color);
 }
 
 p {
@@ -33,7 +35,7 @@ p {
 }
 
 nav {
-	background-color: var(--main-color);
+	background-color: #565656;
 	width: 100%;
 	margin: 0;
 	padding: 30px;
@@ -54,7 +56,7 @@ main {
 }
 
 .clear-color {
-	color: var(--clear-color);
+	color: #fff;
 }
 
 .mode-toggler {
@@ -80,16 +82,16 @@ main {
 	height: 20px;
 	margin: 1px;
 	border-radius: 13px;
-	float: right;
+	float: left;
 }
 
 .width-container-color {
-	background-color: var(--main-color);
+	background-color: #565656;
 	margin: 0;
 }
 
 .img-logo {
-	content: url("img/visualittle-svg/visualittle-branding-visual-identity-graphic-design-quiz-ramon-bosch-main-logotype.svg");
+	content: url("img/visualittle-svg/visualittle-branding-visual-identity-graphic-design-quiz-ramon-bosch-main-logotype-dark.svg");
 }
 
 .max-width-container {
@@ -115,7 +117,7 @@ main {
 
 .raindrop {
 	width: 2px;
-	background-color: var(--dark-color);
+	background-color: var(--main-color);
 	position: absolute;
 	z-index: 1;
 	animation: raining 0.5s linear infinite;
@@ -198,7 +200,8 @@ main {
 	border-style: none;
 	font-weight: 400;
 	font-size: 24px;
-	background-color: var(--clear-color);
+	background-color: var(--main-color);
+	color:#565656;
 	border-radius: 50px;
 	height: 70px;
 	width: 200px;
@@ -206,6 +209,7 @@ main {
 
 #button-option-none {
 	width: 100%;
+	background-color: var(--clear-color);
 
 }
 
@@ -270,7 +274,6 @@ main {
 
 .results h3 {
 	margin-top: 60px;
-	;
 }
 
 .sun {
@@ -286,7 +289,7 @@ main {
 .sun img {
 	position: absolute;
 	z-index: 1;
-	content: url("img/visualittle-branding-visual-identity-graphic-design-quiz-ramon-bosch-main-sun.svg");
+	content: url("img/visualittle-branding-visual-identity-graphic-design-quiz-ramon-bosch-main-sun-dark.svg");
 }
 
 @keyframes sunny {
@@ -313,7 +316,7 @@ main {
 	border-radius: 5px;
 	margin: auto;
 	width: 100%;
-	background-color: #ffffff50;
+	background-color: #ffffff10;
 	display: flex;
 }
 
@@ -334,23 +337,26 @@ main {
 	border-radius: 5px;
 	justify-content: left;
 	width: 0%;
-	background-color: var(--dark-color);
+	background-color: var(--main-color);
 }
 
 .progress-parameter-left {
 	width: 30%;
-	background-color: var(--dark-color);
+	background-color: var(--main-color);
 	border-radius: 5px 0 0 5px;
 	margin: unset;
 }
 
 .progress-parameter-right {
 	width: 30%;
-	background-color: var(--dark-color);
+	background-color: var(--main-color);
 	border-radius: 0 5px 5px 0;
 	margin: unset;
 }
 
+#resultsDivLogo{
+	filter: brightness(40);
+}
 
 .resultsDivColor {
 	width: 25%;
@@ -358,6 +364,10 @@ main {
 	display: inline-block;
 	margin: auto;
 	padding: 0;
+}
+
+#resultsDivFont{
+	filter: brightness(40);
 }
 
 .umbrella {
@@ -374,7 +384,7 @@ main {
 	position: absolute;
 	z-index: 1;
 	transform: translate(20%, -38%);
-	content: url("img/visualittle-branding-visual-identity-graphic-design-quiz-ramon-bosch-main-umbrella.svg");
+	content: url("img/visualittle-branding-visual-identity-graphic-design-quiz-ramon-bosch-main-umbrella-dark.svg");
 }
 
 @keyframes umbrella {
@@ -401,7 +411,7 @@ main {
 }
 
 .dark-background {
-	background-color: var(--dark-color);
+	background-color: #565656;
 }
 
 .bottom-section div {
@@ -412,6 +422,7 @@ main {
 .icon-img {
 	margin-top: 50px;
 	margin-bottom: -20px;
+	filter: brightness(40);
 }
 
 .separator {
@@ -419,8 +430,8 @@ main {
 }
 
 footer a {
-	color: var(--clear-color);
-	text-decoration: underline var(--clear-color);
+	color: var(--dark-color);
+	text-decoration: underline var(--dark-color);
 }
 
 @media only screen and (min-width: 600px) {
@@ -450,7 +461,6 @@ footer a {
 		font-size: 56px;
 		line-height: 74px;
 	}
-
 	.max-width-container {
 		margin: auto;
 		max-width: 600px;

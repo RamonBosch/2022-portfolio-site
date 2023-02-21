@@ -1,25 +1,18 @@
 :root {
-	--project-color-1: #cd898e;
-	--project-color-2: #e65526;
-	--project-color-3: #4c847a;
-	--project-color-4: #c3665f;
-	--project-color-5: #88c27e;
-	--project-color-6: #778448;
-	--project-color-7: #5d7851;
+	--project-color-1: #d84255;
+	--project-color-2: #ee7368;
+	--project-color-3: #00aeef;
 }
 
 
 :root[color-mode="light"] {
 	--dark-color: #161616;
 	--light-color: #f3f3f3;
-	--project-bg-color-1: #d3c0c0;
-	--project-bg-color-2: #ff804e;
-	--project-bg-color-3: #cbdee3;
-	--project-bg-color-4: #c3665f;
-	--project-bg-color-5: #d6e764;
-	--project-bg-color-6: #a1ab7b;
-	--project-bg-color-7: #a8b2a9;
-	--project-bg-color-8: #ffffff;
+	--project-bg-color-1: #df5668;
+	--project-bg-color-2: hwb(204 49% 16%);
+	--project-bg-color-3: hwb(177 75% 11%);
+	--project-bg-color-4: hwb(105 75% 11%);
+	--project-bg-color-5: hwb(250 74% 24%);
 	--toggler-switch-position: right;
 	--svg-opacity: 1;
 	--icon-brightness: brightness();
@@ -29,14 +22,11 @@
 :root[color-mode="dark"] {
 	--dark-color: #f3f3f3;
 	--light-color: #161616;
-	--project-bg-color-1: #2c2828;
-	--project-bg-color-2: #3d1c0f;
-	--project-bg-color-3: #292d2e;
-	--project-bg-color-4: #2f1817;
-	--project-bg-color-5: #24270d;
-	--project-bg-color-6: #212418;
-	--project-bg-color-7: #232523;
-	--project-bg-color-8: #000000;
+	--project-bg-color-1: hwb(349 11% 78%);
+	--project-bg-color-2: hwb(204 4% 74%);
+	--project-bg-color-3: hwb(248 13% 78%);
+	--project-bg-color-4: rgb(24, 35, 27);
+	--project-bg-color-5: hwb(252 12% 84%);
 	--toggler-switch-position: left;
 	--svg-opacity: 0.35;
 	--icon-brightness: brightness(11);
@@ -173,8 +163,7 @@ header svg {
 }
 
 nav img,
-footer img,
-.logo {
+footer img {
 	filter: var(--icon-brightness);
 }
 
@@ -240,18 +229,6 @@ footer img,
 
 .projects:nth-of-type(5) {
 	background-color: var(--project-bg-color-5);
-}
-
-.projects:nth-of-type(6) {
-	background-color: var(--project-bg-color-6);
-}
-
-.projects:nth-of-type(7) {
-	background-color: var(--project-bg-color-7);
-}
-
-.projects:nth-of-type(8) {
-	background-color: var(--project-bg-color-8);
 }
 
 .projects:nth-child(odd) {

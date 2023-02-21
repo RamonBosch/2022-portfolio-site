@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+
+DESIGNED AND DEVELOPED
+BY RAMON BOSCH C 2022
+
+   |‾| |‾| |‾‾‾‾‾/
+           |    {
+   |_| |_| |_____\
+
+-->
+<html lang="en" color-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramon Bosch 🕹️ Game Design Portfolio</title>
+    <script>
+      if (localStorage.getItem("color-mode") === "dark" || (window.matchMedia("(prefers-color-scheme: dark)").matches && !localStorage.getItem("color-mode"))) {
+        document.documentElement.setAttribute("color-mode", "dark");
+      }
+    </script>
+    <meta name="description" content="Chilly Chuck game design case study. Discover the process behind the design of this strategy game concept.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/favicon-portfolio.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <nav>
+      <a title="Go to home" alt="Home" href="index.html">
+        <img height="20px" title="Home" width="auto" src="/ramon-bosch-porfolio-main-icon.svg" alt="Main logo">
+      </a>
+      <div class="mode-toggler">
+        <button class="toggler-border light--hidden" alt="Toggle to light mode" title="Toggle light or dark mode">
+          <div class="toggler-switch"></div>
+        </button>
+        <button class="toggler-border dark--hidden" alt="Toggle to dark mode" title="Toggle light or dark mode">
+          <div class="toggler-switch"></div>
+        </button>
+      </div>
+    </nav>
+    <main>
+      <header class="header-project-page">
+        <h1>Chilly Chuck</h1>
+      </header>
+      <section class="main-module">
+        <div>
+          <p class="little-title" style="margin-bottom: 0px;"> SUMMARY </p>
+          <p>I like to come up with <b>new fictional game concepts and sketch ideas about them</b>. Chilly Chuck was one of my favourite concepts from an old notebook and a few years ago I had the time to develop it a little bit further. </p>
+          <img loading="lazy" alt="Chilly Chuck sketch" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-sketch.webp">
+        </div>
+      </section>
+      <section class="main-module">
+        <p>Chilly Chuck would be a <b>turn-based isometric puzzle game heavily oriented towards resource management</b>. The player would use expendable supplies to melt the ice, defeat foes and advance. Wasting food carelessly may cause getting stuck and having to redo the stage again using a different strategy. </p>
+        <h2>Story</h2>
+        <p>Chuck is the only inhabitant left in Frozenville. Winter comes early as usual, but this year, instead of hibernating with his stash of ridiculously strong flavoured chilly peppers, <b>he decides to travel the tundra to spend the winter on paradise island Sunland</b>. A simple two-scene animation shows us the premise of the story. </p>
+        <div>
+          <img loading="lazy" alt="Story part 1" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-story-01.webp">
+          <p>It's winter in Frozenville and Chuck has nothing but a cabin full of chilly peppers to pass the season... Oh boy, so spicy! </p>
+        </div>
+        <div>
+          <img loading="lazy" alt="Story part 2" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-story-02.webp">
+          <p>Enough of this! Chuck packs his stuff and parts to Sunland where the weather is bright and the food is sweet. Will he find a way through the freezing tundra? </p>
+        </div>
+        <h2>Main character</h2>
+        <p>Chuck is a <b>tough guy with a special taste for spicy food</b>. If he’s not eating, he’s surely thinking about what to eat next. </p>
+        <img loading="lazy" alt="Chuck design" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-character-design.webp">
+        <h3 style="color: var(--project-color-3); margin-top: 0;"> Power-ups </h3>
+        <p>
+          <b>Hot pepper:</b> Chuck exhales red hot fire breath in three directions, burning nearby enemies.
+        </p>
+        <img style="max-width: 600px;" loading="lazy" alt="Chuck power fire" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-power-fire.webp">
+        <p>
+          <b>Electro-pepper:</b> Chuck shoots an electric bolt that damages enemies in front of him.
+        </p>
+        <img style="max-width: 600px;" loading="lazy" alt="Chuck power spark" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-power-spark.webp">
+        <p>
+          <b>Pepper bomb:</b> Chuck explodes and damages all enemies behind him and by his side.
+        </p>
+        <img style="max-width: 600px;" loading="lazy" alt="Chuck power bomb" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-power-bomb.webp">
+        <h2>Foes</h2>
+        <p>Snowmoles love to <b>hoard chilly peppers of any kind</b>. If Chuck's not quick enough, he may have to enter their mole holes to retrieve his food. </p>
+        <img loading="lazy" alt="Snow moles" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-snow-moles.webp">
+        <p>Count Cold is constantly looking for warmth, so <b>he hugs everything he finds</b>, even moles or peppers. </p>
+        <img style="max-width: 600px;" loading="lazy" alt="Count cold" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-count-cold.webp">
+        <p>Chuck will get a cold and <b>lose his powers</b> if Count Cold hugs him. A new chilly pepper will bring him back to normal. </p>
+        <img style="max-width: 600px;" loading="lazy" alt="Chuck with a cold" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-powerless.webp">
+        <h2>Other items</h2>
+        <p>Some recurring elements are also found in the game. Chilly boxes contain one or more types of chilly peppers. Ice blocks have to be melted or pushed to unblock the path. Route to Sunland signs mark the end of the stage.</p>
+        <img loading="lazy" alt="Various items" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-items.webp">
+        <p>Slides can be used to hit foes in a straight line. Wooden bridges have to be crossed quickly before they collapse.</p>
+        <img loading="lazy" alt="Slider and bridge" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-other.webp">
+        <h2>Final game</h2>
+        <p>I also designed a cartoony logo following the style of the game. The word Chilly is blue with icy reflections while the name Chuck is red hot with a gradient that suggests rising temperature.</p>
+        <img style="max-width: 600px;" loading="lazy" alt="Chilly Chuck logo" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-logo.webp">
+        <p>And finally, a screenshot of a stage. To beat the game, <b>the player has to go through all of the stages and get to Sunland</b>. The number of chilly peppers per stage is limited, the user has to eat and employ them carefully to avoid getting stuck. </p>
+        <img loading="lazy" alt="Level design" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-level-design.webp">
+        <p>
+          <b>Each stage is a different puzzle-like series of icy cliffs</b> that will make the player think about strategies to successfully get to the goal. At some point it won’t be possible to go back, so it is better to advance carefully.
+        </p>
+        <img loading="lazy" alt="Cinematic scene" src="img/chilly-chuck/ramon-bosch-game-design-chilly-chuck-cinematic.webp">
+        <p>In conclusion, I think Chilly Chuck could work as a fun game. If I ever find the time, I would love to build a simple demo to test and make sure if it is worth developing as a full game.</p>
+        <div class="separator">
+          <a alt="Visit next project" title="Go to next project" href="miscellaneous.html">
+            <p style="color: var(--project-color-3); text-decoration: underline;">NEXT PROJECT →</p>
+            <h3>Miscellaneous Work</h3>
+          </a>
+        </div>
+      </section>
+      <section class="main-module">
+        <div>
+          <h3 style="color: var(--project-color-3); margin-top: 0;"> WANNA CHAT? </h3>
+          <p> I’m open to possible job offers, freelance work or just to chat a little. I’ll also be happy to respond any design-related questions you have in mind! </p>
+          <a href="mailto:hello@ramonbosch.com" title="Send me a mail" alt="Send a mail to Ramon Bosch" class="button"> MAIL ME </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-section">
+        <a title="Go to home" alt="Home" href="index.html">
+          <img height="20px" title="Home" width="auto" src="/ramon-bosch-porfolio-main-icon.svg" alt="Main logo">
+        </a>
+        <p> Every problem is a <br>solution to be designed </p>
+        <p> ©2022 </p>
+      </div>
+      <div class="footer-column">
+        <div class="footer-section">
+          <p> Social </p>
+          <p>
+            <a href="https://www.linkedin.com/in/ramonboschdesign/" title="Go to Linkedin" alt="Link to Linkedin profile">LinkedIn</a>
+          </p>
+          <p>
+            <a href="https://www.behance.net/ramonbosch" title="Go to Behance" alt="Link to Behance profile">Behance</a>
+          </p>
+          <p>
+            <a href="https://www.behance.net/ramonbosch" title="Go to Instagram" alt="Link to Instagram profile">Instagram</a>
+          </p>
+          <p>
+            <a href="https://github.com/RamonBosch" title="Go to HitHub" alt="Link to GitHub profile">GitHub</a>
+          </p>
+        </div>
+        <div class="footer-section">
+          <p> Contact </p>
+          <p>
+            <a href="mailto:hello@ramonbosch.com" title="Mail me" alt="Link to send a mail to Ramon Bosch">Email</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/app.js"></script>
+  </body>
+</html>
